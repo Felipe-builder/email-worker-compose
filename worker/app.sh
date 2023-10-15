@@ -1,4 +1,4 @@
 #!/bin/sh
 
-pip install redis==2.10.5
+pip install redis
 python -u worker.py
