@@ -5,9 +5,9 @@ from bottle import request, Bottle
 
 
 class Sender(Bottle):
-    def __init(self):
+    def __init__(self):
         super().__init__()
-        self.route("/", method="POST", callback=self.send)
+        self.route('/', method="POST", callback=self.send)
         
         self.fila = redis.StrictRedis(host="queue", port=6379, db=0)
         
@@ -32,6 +32,6 @@ class Sender(Bottle):
         return f"Mensagem enfileirada ! Assunto: {assunto} Mensagem: {mensagem}"
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     sender = Sender()
-    sender.run(host="0.0.0.0", port=8080, debug=True)
+    sender.run(host='0.0.0.0', port=8080, debug=True)
